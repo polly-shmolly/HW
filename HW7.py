@@ -1,20 +1,27 @@
 # task 1
 '''
 words substitution
+
+я хз поччему у меня в голове не созревает нормальное решение.
+на протяжении
+всех задач мой мозг выгрыз зомби)))
 '''
 
-# import re
-# my_char = '*'
-# with open('forbidden_words.txt', 'r') as f:
-#     words = f.read()
-#     arr = words.split(' ')
-#
-# with open('text.txt', 'r') as f:
-#     my_text = f.readlines()
-#     for i in my_text:
-#         for j in arr:
-#             match = re.search(j, i)
-#             if match.span() != None:
+my_char = '*'
+with open('forbidden_words.txt', 'r') as f:
+    words = f.read()
+    arr = words.split(' ')
+
+with open('task1.txt', 'r') as f:
+    for line in f:
+        data = line.split()
+        for i in data:
+            for j in arr:
+                a = data[i].replace(arr[j], my_char)
+                print(a)
+
+
+
 
 
 # task2
@@ -103,7 +110,8 @@ Cezar cipher
 '''
 Z: Гистограмма
 
-не понимаю как связать словрь с матрицей, чтобы сделать эту гистограмму(((
+не понимаю как связать словрь с матрицей, 
+чтобы сделать эту гистограмму(((
 '''
 
 # def analysis(lst, dct):
@@ -155,6 +163,25 @@ Z: Гистограмма
 #     matrix = []
 #     zero_matrix(N, M, matrix)
 #     gist_matrix(N, M, matrix, my_dict)
+
+# task7
+'''
+Необходимо распределить 450 мест между 
+партиями, участвовавших в выборах.
+'''
+# with open('task7.txt', 'r') as f:
+#     summa = 0
+#     for line in f:
+#         data = line.replace('\n', '').split()
+#         summa += int(data[-1])
+#     num = summa / 450
+#
+#     for line in f:
+#         data = line.replace('\n', '').split()
+#         place = int(data[-1]) / int(num)
+#         data[-1] = int(place)
+#         print(data)
+
 
 
 
