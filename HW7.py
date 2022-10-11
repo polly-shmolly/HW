@@ -7,21 +7,29 @@ words substitution
 всех задач мой мозг выгрыз зомби)))
 '''
 
-my_char = '*'
-with open('forbidden_words.txt', 'r') as f:
-    words = f.read()
-    arr = words.split(' ')
-
-with open('task1.txt', 'r') as f:
+with open('my_txt/forbidden_words.txt', 'r') as f:
     for line in f:
-        data = line.split()
-        for i in data:
-            for j in arr:
-                a = data[i].replace(arr[j], my_char)
-                print(a)
+        words = line.lower().split()
+
+with open('my_txt/task1.txt', 'r') as f:
+    text = ''
+    for line in f:
+        text += line
+    for char in text:
+        for i in words:
+            text = text.lower().replace(i, len(i) * '*')
+
+print(text)
 
 
+"""
+запрещеныые слова запихнуть в список
+пройтись циклом по этому списку
+и в цикле реплейсить i на len(i)*'*'
 
+for i in words:
+    text.replace(i,len(i)*'*'
+"""
 
 
 # task2
