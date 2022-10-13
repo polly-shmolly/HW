@@ -7,38 +7,41 @@
 #
 from dataclasses import dataclass
 #
-# @dataclass
+#@dataclass
 # class Product:
 #     name: str
 #     name_store: str
 #     cost: int
 #
+#
 # class Storage(Product):
-#     list_of_products = []
 #
-#     def add_to_list(self):
-#         return Storage.list_of_products.append(self)
+#     def __init__(self):
+#         self.list_of_products = []
 #
-#     @staticmethod
-#     def search_id(index):
-#         for i in range(len(Storage.list_of_products)):
+#     def add_to_list(self, product):
+#         return self.list_of_products.append(product)
+#
+#
+#     def search_id(self, index):
+#         for i in range(len(self.list_of_products)):
 #             if index == i:
-#                 return Storage.list_of_products[i]
+#                 return self.list_of_products[i]
 #
 #     def search_name(self):
 #         name = input('Enter name of product: ')
-#         for i in Storage.list_of_products:
+#         for i in self.list_of_products:
 #             if i.name == name:
 #                 return i
 #
 #     def sort_name_store(self):
-#         return sorted(Storage.list_of_products, key=lambda product: product.name_store)
+#         return sorted(self.list_of_products, key=lambda product: product.name_store)
 #
 #     def sort_cost(self):
-#         return sorted(Storage.list_of_products, key=lambda product: product.cost)
+#         return sorted(self.list_of_products, key=lambda product: product.cost)
 #
 #     def sort_name(self):
-#         return sorted(Storage.list_of_products, key=lambda product: product.name)
+#         return sorted(self.list_of_products, key=lambda product: product.name)
 #
 #     # не вызываю потому что бьет ошибку и я не знаю почему(((
 #     # может и имею представление, потому что у меня нет инита в этом кдассе, но я не понимю....
@@ -49,19 +52,21 @@ from dataclasses import dataclass
 # a = Product('Book', 'Oz.by', 12)
 # b = Product('Bottle', 'Aliexpress', 6)
 # c = Product('Sweet', 'Milka', 14)
-# Storage.add_to_list(a)
-# Storage.add_to_list(b)
-# Storage.add_to_list(c)
+# storage = Storage()
+# storage.add_to_list(a)
+# storage.add_to_list(b)
+# storage.add_to_list(c)
 #
-# print(Storage.search_id(2))
+# print(storage.search_id(2))
 # print('-------------------------------')
-# print(Storage.search_name(None))# я вообще имею право так делать????
+# print("!!!")
+# print(storage.search_name())# я вообще имею право так делать????
 # print('-------------------------------')
-# print(Storage.sort_name_store(None))
+# print(storage.sort_name_store())
 # print('-------------------------------')
-# print(Storage.sort_name(None))
+# print(storage.sort_name())
 # print('-------------------------------')
-# print(Storage.sort_cost(None))
+# print(storage.sort_cost())
 
 # task2
 '''
@@ -194,31 +199,31 @@ from dataclasses import dataclass
 '''
 Класс Прямоугольный треугольник
 '''
-import math
-class RectangularTriangle:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-
-    def size_side_a(self, percentage):
-        if percentage < 0:
-            self.a = self.a - (self.a * abs(percentage) / 100)
-        self.a = (self.a * percentage / 100) + self.a
-        return self.a
-
-    def r_circle(self):
-        return 1/2 * (self.a**2 + self.b**2) ** (0.5)
-
-    def p_triangle(self):
-        return self.a + self.b + (self.a**2 + self.b**2) ** (0.5)
-
-
-
-
-t = RectangularTriangle(4, 5)
-print(t.size_side_a(40))
-print(t.r_circle())
-print(t.p_triangle())
+# import math
+# class RectangularTriangle:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#
+#     def size_side_a(self, percentage):
+#         if percentage < 0:
+#             self.a = self.a - (self.a * abs(percentage) / 100)
+#         self.a = (self.a * percentage / 100) + self.a
+#         return self.a
+#
+#     def r_circle(self):
+#         return 1/2 * (self.a**2 + self.b**2) ** (0.5)
+#
+#     def p_triangle(self):
+#         return self.a + self.b + (self.a**2 + self.b**2) ** (0.5)
+#
+#
+#
+#
+# t = RectangularTriangle(4, 5)
+# print(t.size_side_a(40))
+# print(t.r_circle())
+# print(t.p_triangle())
 
 # task6
 '''
