@@ -1,8 +1,6 @@
 # task1
 '''
 Классы Товар и Склад
-
-я думаю я что-то сделалала не так
 '''
 #
 from dataclasses import dataclass
@@ -217,21 +215,69 @@ from dataclasses import dataclass
 #     def p_triangle(self):
 #         return self.a + self.b + (self.a**2 + self.b**2) ** (0.5)
 #
-#
-#
+#     def angle_3(self):
+#         alfa = math.asin(self.a / (self.a**2 + self.b**2) ** (0.5))
+#         print(f'alfa = {math.degrees(alfa)}')
+#         beta = 90 - math.degrees(alfa)
+#         print(f'beta = {beta}')
+#         print('gama = 90')
 #
 # t = RectangularTriangle(4, 5)
 # print(t.size_side_a(40))
-# print(t.r_circle())
-# print(t.p_triangle())
+# print(f'radius = {t.r_circle()}')
+# print(f'perimeter = {t.p_triangle()}')
+# t.angle_3()
 
 # task6
 '''
 Класс Одномерный массив
 '''
+# class TArray:
+#     def __init__(self, amount):
+#         self.amount = amount
+#         self.arr = []
+#     def add_data(self):
+#
+#         for i in range(self.amount):
+#             num = int(input('Enter element: '))
+#             self.arr.append(num)
+#     def print_data(self):
+#         print(self.arr)
+#     def max_min(self):
+#         max_el = self.arr[0]
+#         min_el = self.arr[0]
+#         for i in range(self.amount):
+#             if max_el < self.arr[i]:
+#                 max_el = self.arr[i]
+#             if min_el > self.arr[i]:
+#                 min_el = self.arr[i]
+#         print(f'{max_el=}, {min_el=}')
+#     def sort_list(self):
+#         self.arr.sort()
+#         return self.arr
+#     def sum_elem(self):
+#         counter = 0
+#         for i in range(self.amount):
+#             counter += self.arr[i]
+#         return counter
+#     def __add__(self, other):
+#         return self.arr.append(other)
+#     def __mul__(self, other):
+#         for i in range(self.amount):
+#             self.arr[i] *= other
+#
+#
+# a = TArray(5)
+# a.add_data()
+# a.print_data()
+# a.max_min()
+# print(a.sort_list())
+# print(a.sum_elem())
+# a+5
+# a.print_data()
+# a*2
+# a.print_data()
 
 
-# task7
-'''
-Класс Автобус
-'''
+
+
