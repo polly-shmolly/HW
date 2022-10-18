@@ -138,16 +138,16 @@ def zero_matrix(N, M, matrix):
         for j in range(0, N):
             matrix[i].append(0)
 
-def gist_matrix(N, M, matrix, dct):
-
-    # for val in dct.values():
-    #     for i in range(0, N):
-    #         for j in range(0, M):
-    #             if val+1 == j:
-    #                 matrix[i][j] = 1
-    # trans_m = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
-    # for row in trans_m:
-    #     print(row)
+# def gist_matrix(N, M, matrix, dct):
+#
+#     # for val in dct.values():
+#     #     for i in range(0, N):
+#     #         for j in range(0, M):
+#     #             if val+1 == j:
+#     #                 matrix[i][j] = 1
+#     # trans_m = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+#     # for row in trans_m:
+#     #     print(row)
 
 with open('task6.txt', 'r') as f:
     data = ['']
