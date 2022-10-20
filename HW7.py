@@ -113,9 +113,6 @@ Cezar cipher
 # task6
 '''
 Z: Гистограмма
-
-не понимаю как связать словрь с матрицей, 
-чтобы сделать эту гистограмму(((
 '''
 
 def analysis(lst, dct):
@@ -125,31 +122,28 @@ def analysis(lst, dct):
         else:
             dct[i] = 1
 
-def max_val_dct(dct):
-    max_val = 0
-    for i in dct.values():
-        if max_val < i:
-            max_val = i
-    return max_val
+def gist_matrix(matrix, dct):
 
-def zero_matrix(N, M, matrix):
-    for i in range(0, M):
+    val = list(dct.values())
+    max_arr = val[0]
+    for i in val:
+        if i > max_arr:
+            max_arr = i
+    count = max_arr + 1
+    for i in range(0, max_arr+1):
         matrix.append([])
-        for j in range(0, N):
-            matrix[i].append(0)
+        for j in range(len(val)):
+            if count > val[j]:
+                matrix[i].append(' ')
+            else:
+                matrix[i].append('#')
+        count -= 1
+    for i in range(0, max_arr+1):
+        for j in range(len(val)):
+            print(matrix[i][j], end='')
+        print()
 
-# def gist_matrix(N, M, matrix, dct):
-#
-#     # for val in dct.values():
-#     #     for i in range(0, N):
-#     #         for j in range(0, M):
-#     #             if val+1 == j:
-#     #                 matrix[i][j] = 1
-#     # trans_m = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
-#     # for row in trans_m:
-#     #     print(row)
-
-with open('task6.txt', 'r') as f:
+with open('my_txt\\task6.txt', 'r') as f:
     data = ['']
     my_dict = {}
     for line in f:
@@ -162,11 +156,8 @@ with open('task6.txt', 'r') as f:
     print(data)
     analysis(data, my_dict)
     print(my_dict)
-    N = len(data) # horizontal
-    M = max_val_dct(my_dict) # vertical
     matrix = []
-    zero_matrix(N, M, matrix)
-    gist_matrix(N, M, matrix, my_dict)
+    gist_matrix(matrix, my_dict)
 
 # task7
 '''
