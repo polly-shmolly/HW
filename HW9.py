@@ -4,67 +4,65 @@
 '''
 #
 from dataclasses import dataclass
-#
-#@dataclass
-# class Product:
-#     name: str
-#     name_store: str
-#     cost: int
-#
-#
-# class Storage(Product):
-#
-#     def __init__(self):
-#         self.list_of_products = []
-#
-#     def add_to_list(self, product):
-#         return self.list_of_products.append(product)
-#
-#
-#     def search_id(self, index):
-#         for i in range(len(self.list_of_products)):
-#             if index == i:
-#                 return self.list_of_products[i]
-#
-#     def search_name(self):
-#         name = input('Enter name of product: ')
-#         for i in self.list_of_products:
-#             if i.name == name:
-#                 return i
-#
-#     def sort_name_store(self):
-#         return sorted(self.list_of_products, key=lambda product: product.name_store)
-#
-#     def sort_cost(self):
-#         return sorted(self.list_of_products, key=lambda product: product.cost)
-#
-#     def sort_name(self):
-#         return sorted(self.list_of_products, key=lambda product: product.name)
-#
-#     # не вызываю потому что бьет ошибку и я не знаю почему(((
-#     # может и имею представление, потому что у меня нет инита в этом кдассе, но я не понимю....
-#     def __add__(self, other):
-#         return self.cost + other.cost
-#
-#
-# a = Product('Book', 'Oz.by', 12)
-# b = Product('Bottle', 'Aliexpress', 6)
-# c = Product('Sweet', 'Milka', 14)
-# storage = Storage()
-# storage.add_to_list(a)
-# storage.add_to_list(b)
-# storage.add_to_list(c)
-#
-# print(storage.search_id(2))
-# print('-------------------------------')
-# print("!!!")
-# print(storage.search_name())# я вообще имею право так делать????
-# print('-------------------------------')
-# print(storage.sort_name_store())
-# print('-------------------------------')
-# print(storage.sort_name())
-# print('-------------------------------')
-# print(storage.sort_cost())
+
+@dataclass
+class Product:
+    name: str
+    name_store: str
+    cost: int
+
+
+class Storage(Product):
+
+    def __init__(self):
+        self.list_of_products = []
+
+    def add_to_list(self, product):
+        return self.list_of_products.append(product)
+
+
+    def search_id(self, index):
+        for i in range(len(self.list_of_products)):
+            if index == i:
+                return self.list_of_products[i]
+
+    def search_name(self):
+        name = input('Enter name of product: ')
+        for i in self.list_of_products:
+            if i.name == name:
+                return i
+
+    def sort_name_store(self):
+        return sorted(self.list_of_products, key=lambda product: product.name_store)
+
+    def sort_cost(self):
+        return sorted(self.list_of_products, key=lambda product: product.cost)
+
+    def sort_name(self):
+        return sorted(self.list_of_products, key=lambda product: product.name)
+
+    def __add__(self, other):
+        return self.cost + other.cost
+
+
+a = Product('Book', 'Oz.by', 12)
+b = Product('Bottle', 'Aliexpress', 6)
+c = Product('Sweet', 'Milka', 14)
+storage = Storage()
+storage.add_to_list(a)
+storage.add_to_list(b)
+storage.add_to_list(c)
+
+print(storage.search_id(2))
+print('-------------------------------')
+print("!!!")
+print(storage.search_name())
+print('-------------------------------')
+print(storage.sort_name_store())
+print('-------------------------------')
+print(storage.sort_name())
+print('-------------------------------')
+print(storage.sort_cost())
 
 # task2
 '''
